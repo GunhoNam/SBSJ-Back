@@ -8,7 +8,7 @@ services:
       - ./docker/mysql/custom.cnf:/etc/mysql/conf.d/custom.cnf
       - ./docker/mysql/logs:/var/log/mysql
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_USER: ${DB_USER}
@@ -31,7 +31,7 @@ services:
     networks:
       - app
   server:
-    image: "sbsj/sbsj-project-server:latest"
+    image: "sbsj/sbsj-project-server:test"
     build: .
     container_name: sbsj-project-server
     restart: unless-stopped
@@ -45,7 +45,7 @@ services:
       - bash
       - -c
       - |
-        /wait-for-it.sh db:3306 -t 15
+        /wait-for-it.sh db:3307 -t 15
         java -jar /app.jar
     networks:
       - app

@@ -1,7 +1,7 @@
 FROM openjdk:17-alpine
-
-ARG JAR_FILE=*.jar
+ARG JAR_FILE=build/libs/sbsj_process-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} app.jar
+RUN chmod +x app.jar
 
 RUN apk add --no-cache --update bash
 # 여기서 wait-for-it.sh 를 설치하고 권한을 준다
