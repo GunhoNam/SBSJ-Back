@@ -5,7 +5,7 @@ pipeline {
     stage("build") {
       steps {
         echo "build application from Jenkins"
-        sh 'cd SBSJ-Back'
+        sh 'cd ~/SBSJ-Back'
         sh 'git fetch'
         sh 'git pull'
         sh 'docker compose build'
