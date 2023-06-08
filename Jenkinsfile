@@ -20,7 +20,7 @@ pipeline {
     
     stage("deploy") {
       steps {
-        echo "deploy test application from Jenkins"
+        echo "deploy last test application from Jenkins"
         sh 'docker images'
       }
     }
