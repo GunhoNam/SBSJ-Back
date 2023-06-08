@@ -17,7 +17,6 @@ pipeline {
     stage("deploy") {
       steps {
         echo "deploy application from Jenkins"
-        echo "deploy application from Jenkins"
       }
     }
     
