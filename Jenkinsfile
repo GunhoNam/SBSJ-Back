@@ -26,6 +26,7 @@ pipeline {
         sh 'docker --version'
 
         echo 'deploy been success!'
+	echo 'test completed'
       }
     }
     
