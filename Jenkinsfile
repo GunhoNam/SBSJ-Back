@@ -14,7 +14,7 @@ pipeline {
     stage("build image") {
       steps {
         echo "build image from Jenkins"
-        sh 'docker --version
+        sh 'docker --version'
         sh 'docker build .'
       }
     }
