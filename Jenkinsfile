@@ -22,6 +22,7 @@ pipeline {
         echo "deploy last test application from Jenkins"
         sh 'cd build/libs'
         sh 'ls'
+        sh 'docker build .'
         echo 'deploy been success!'
       }
     }
