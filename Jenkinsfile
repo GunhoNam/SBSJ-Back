@@ -11,19 +11,20 @@ pipeline {
       }
     }
     
-    stage("test") {
+    stage("build image") {
       steps {
-        echo "test application from Jenkins"
+        echo "build image from Jenkins"
+        sh 'docker --version
+        sh 'docker build .'
       }
     }
     
     stage("deploy") {
       steps {
         echo "deploy last test application from Jenkins"
-        sh 'cd build/libs'
-        sh 'ls'
-        sh 'docker --version'
-//         sh 'docker build .'
+        sh 'docker images'
+        sh 'docker ps'
+
         echo 'deploy been success!'
       }
     }
