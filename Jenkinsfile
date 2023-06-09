@@ -23,7 +23,7 @@ pipeline {
         sh 'cd build/libs'
         sh 'ls'
         sh 'docker --version'
-        sh 'docker build .'
+//         sh 'docker build .'
         echo 'deploy been success!'
       }
     }
