@@ -5,17 +5,17 @@ pipeline {
     stage("build") {
       steps {
         echo "build application from Jenkins"
+        sh 'docker --version'
         sh 'pwd'
         sh 'ls'
-        sh './gradlew build'
+//         sh './gradlew build'
       }
     }
     
     stage("build image") {
       steps {
         echo "build image from Jenkins"
-        sh 'docker --version'
-        sh 'docker build .'
+//         sh 'docker build .'
       }
     }
     
