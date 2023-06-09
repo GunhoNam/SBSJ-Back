@@ -7,8 +7,6 @@ pipeline {
         echo "build application from Jenkins"
         sh 'pwd'
         sh 'ls'
-        sh 'git fetch'
-        sh 'git pull'
         sh './gradlew build'
       }
     }
