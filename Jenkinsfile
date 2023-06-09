@@ -25,7 +25,7 @@ pipeline {
         sh 'docker ps'
         sh 'docker --version'
 
-	sh 'docker start test'
+	sh 'docker start sbsj-project-db'
         echo 'deploy have been success!'
 	echo 'test completed'
       }
