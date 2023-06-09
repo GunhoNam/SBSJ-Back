@@ -5,7 +5,6 @@ pipeline {
     stage("build") {
       steps {
         echo "build application from Jenkins"
-        sh 'docker --version'
         sh 'pwd'
         sh 'ls'
 //         sh './gradlew build'
@@ -24,6 +23,7 @@ pipeline {
         echo "deploy last test application from Jenkins"
         sh 'docker images'
         sh 'docker ps'
+        sh 'docker --version'
 
         echo 'deploy been success!'
       }
