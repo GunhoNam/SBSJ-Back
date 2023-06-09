@@ -7,9 +7,9 @@ pipeline {
         echo "build application from Jenkins"
         sh 'pwd'
         sh 'ls'
-//         sh 'git fetch'
-//         sh 'git pull'
-//         sh 'docker compose build'
+        sh 'git fetch'
+        sh 'git pull'
+        sh './gradlew build'
       }
     }
     
@@ -22,7 +22,9 @@ pipeline {
     stage("deploy") {
       steps {
         echo "deploy last test application from Jenkins"
-        sh 'docker images'
+        sh 'cd build/libs'
+        sh 'ls'
+        echo 'deploy been success!'
       }
     }
     
