@@ -23,7 +23,7 @@ pipeline {
         echo "deploy last test application from Jenkins"
         sh 'docker images'
         sh 'docker ps'
-        sh 'docker --version'
+        // sh 'docker --version'
 
 	sh 'docker start sbsj-project-db'
         echo 'deploy have been success!'
