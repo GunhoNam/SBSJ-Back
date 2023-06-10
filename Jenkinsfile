@@ -5,7 +5,9 @@ pipeline {
     stage("Pull Image") {
       steps {
         echo "Pulling image from docker hub"
-        sh 'echo $DOCKER_HUB_PASSWORD | docker login --username ab5265 --password-stdin ' 
+	withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PWD')]) {
+	  sh 'docker login --username ab5265 --password $PWD'
+	}
         sh 'docker pull ab5265/sbsj-project:latest'
 //         sh './gradlew build'
       }
