@@ -57,7 +57,7 @@ jobs:
   deploy:
     needs: build
     name: Deploy
-    runs-on: [ self-hosted, deploy-backend ]
+    runs-on: ubuntu-latest
     steps:
       - name: Webhook
         uses: joelwmale/webhook-action@master
