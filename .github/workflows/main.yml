@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Webhook
-        uses: joelwmale/webhook-action@{SHA-1}
+        uses: joelwmale/webhook-action@SHA-1
         with:
           url: ${{ secrets.WEBHOOK_URL }}
           
