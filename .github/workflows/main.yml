@@ -49,7 +49,7 @@ jobs:
       ## docker build & push to production
       - name: Docker build & push to prod
         run: |
-            docker login ghcr.io -u ${{ github.repository_owner }} -p ${{ secrets.GHCR_TOKEN }}
+            echo "${{ secrets.DOCKER_PASSWORD }}" | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
             docker buildx create --name arm64builder --use
             docker buildx build --platform linux/arm64,linux/amd64 -f Dockerfile -t ab5265/sbsj-back:latest --push .
             docker logout
