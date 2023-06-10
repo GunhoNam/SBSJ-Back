@@ -51,7 +51,7 @@ jobs:
         run: |
             docker login ghcr.io -u ${{ github.repository_owner }} -p ${{ secrets.GHCR_TOKEN }}
             docker buildx create --name arm64builder --use
-            docker buildx build --platform linux/arm64,linux/amd64 -f Dockerfile -t ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest --push .
+            docker buildx build --platform linux/arm64,linux/amd64 -f Dockerfile -t ghcr.io/gunhonam/sbsj-back:latest --push .
             docker logout
 
 #   deploy:
@@ -90,7 +90,7 @@ jobs:
             
 #             echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
             
-#             docker pull ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
+#             docker pull ghcr.io/gunhonam/sbsj-back:latest
 
 #             docker image prune -f
 #             docker logout
