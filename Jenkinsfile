@@ -2,30 +2,30 @@ pipeline {
   agent any
   
   stages {
-    stage("build") {
+    stage("Pull Image") {
       steps {
-        echo "build application from Jenkins"
-        sh 'pwd'
-        sh 'ls'
+        echo "Pulling image from docker hub"
+        sh 'echo $DOCKER_HUB_PASSWORD | docker login --username ab5265 --password-stdin ' 
+        sh 'docker pull ab5265/sbsj-project:latest'
 //         sh './gradlew build'
       }
     }
     
-    stage("build image") {
+    stage("Stop container") {
       steps {
-        echo "build image from Jenkins"
+        echo "Stop current updated container"
+	sh 'docker images'
 //         sh 'docker build .'
       }
     }
     
-    stage("deploy") {
+    stage("Start new Image") {
       steps {
-        echo "deploy last test application from Jenkins"
-        sh 'docker images'
+        echo "Start new Image"
         sh 'docker ps'
         // sh 'docker --version'
 
-	// sh 'docker start sbsj-project-db'
+	// sh 'docker compose up -b'
         echo 'deploy have been success!'
 	echo 'test completed'
       }
