@@ -8,7 +8,7 @@ pipeline {
 	withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PWD')]) {
 	  sh "docker login --username ab5265 --password $PWD"
 	}
-        sh 'docker pull ab5265/sbsj-back:latest'
+//         sh 'docker pull ab5265/sbsj-back:latest'
 //         sh './gradlew build'
       }
     }
@@ -26,7 +26,7 @@ pipeline {
         echo "Start new Image"
         sh 'docker ps'
         // sh 'docker --version'
-
+	sh 'docker image prune'
 	// sh 'docker compose up -b'
         echo 'deploy have been success!'
 	echo 'test completed'
