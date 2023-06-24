@@ -25,7 +25,7 @@ pipeline {
       steps {
         echo "Start new Image"
         sh 'docker ps'
-        // sh 'docker --version'
+        sh 'docker --version'
 	sh 'docker image prune'
 	// sh 'docker compose up -b'
         echo 'deploy have been success!'
